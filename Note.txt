@@ -1,3 +1,5 @@
 - 17/11/2022 : bai 3
             cay dac moi truong
             tao ssh
+            lan dau push code len github
+            cau hinh auto deploy voi Vercel

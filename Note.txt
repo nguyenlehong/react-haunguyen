@@ -1,5 +1,28 @@
-- 17/11/2022 : bai 3
+- 17/11/2022 :  bai 3
             cay dac moi truong
             tao ssh
             lan dau push code len github
             cau hinh auto deploy voi Vercel
+                
+                bai 4
+            cu phap jsx
+            reactDOM
+            component
+            phan biet container va Presentational component
+                + container: quan tam toi data
+                + component: quan tam den hien thi data
+                
+                bai 5
+            props 
+            composition
+            props type checking
+            Render elements 
+            folder structue: src 
+                             |__ component
+                             |  |__ Loading
+                             |     |__ index.jsx
+                             |     |__ styles.scss
+                             |__ feature
+                                |__ ...
+           todo list
+           Album list 

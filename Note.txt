@@ -1,0 +1,3 @@
+- 17/11/2022 : bai 3
+            cay dac moi truong
+            tao ssh

@@ -21,12 +21,12 @@ function AlbumFeature(props) {
     {
       id: 3,
       name: "bai hat so 3",
-      thumbnaiUrl: { hinh },
+      thumbnaiUrl: "picture.jpg",
     },
     {
       id: 4,
       name: "bai hat so 4",
-      thumbnaiUrl: "./../../logo.svg",
+      thumbnaiUrl: { hinh },
     },
   ];
   return (

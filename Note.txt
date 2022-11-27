@@ -24,5 +24,15 @@
                              |     |__ styles.scss
                              |__ feature
                                 |__ ...
-           todo list
-           Album list 
+            todo list
+            Album list
+             
+- 18/11/2022 :  bai 6
+            state
+
+- 21/11/2022 :  bai 6
+            lab todo
+            
+- 26/11/2022 : bai 6
+            lam lai bai todo trong test;
+            filer todo list va test

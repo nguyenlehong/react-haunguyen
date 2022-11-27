@@ -1,0 +1,8 @@
+.todo-item {
+  & > li {
+    cursor: pointer;
+  }
+  & > li.old {
+    color: red;
+  }
+}

@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.aaa {
+  color: blue;
+}
+h2.linkh2 {
+  color: red;
+}
+.linkh2 {
+  color: red;
+  text-decoration: none;
+}

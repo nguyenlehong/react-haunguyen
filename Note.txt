@@ -36,3 +36,39 @@
 - 26/11/2022 : bai 6
             lam lai bai todo trong test;
             filer todo list va test
+
+- 29/11/2022 : bai 7
+            life cycle component trong react js
+            constructor
+            componentDidMount 
+            componentWillunMount
+            compoentUpdate
+
+- 29/11/2022 : bai 8
+            tong quan hook
+            useEffect
+            custom hook
+            callback
+
+               bai 9
+            tong quan routing 
+            tao routing cho tung feature 
+            link and NavLink
+            route and switch
+
+- 30/11/2022 : bai 9
+            route mathing
+
+- 1/12/2022 : bai 9
+
+- 2/12/2022 : bai 9
+           Sync filter to url parmas
+
+- 2/12/2022 : bai 10
+            Prettier 
+            MaterialUi
+
+- 2/12/2022 : bai 11
+            modul Api
+
+- 2/12/2022 : bai 12

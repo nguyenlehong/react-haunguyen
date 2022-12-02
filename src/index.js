@@ -3,11 +3,29 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TodoFeature from "./features/Todo";
+import AlbumFeature from "./features/Album";
+import NotFound from "./components/NotFound";
+import ListPage from "./features/Todo/pages/ListPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App></App>}>
+          <Route path="new-todo" element={<TodoFeature />}>
+            <Route path="listpage" element={<ListPage />}>
+              {" "}
+            </Route>
+          </Route>
+          <Route path="new-album" element={<AlbumFeature />} />
+
+          <Route path="*" element={<NotFound />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

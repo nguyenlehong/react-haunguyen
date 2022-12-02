@@ -52,10 +52,19 @@ function Loadchu(props) {
     (a) => filterStatus === "all" || filterStatus === a.status
   );
   console.log(">>> render", renderTodolist);
+  const handlxoa = (index) => {
+    const xoalist = [...list];
+    xoalist.splice(index, 1);
+    setList(xoalist);
+  };
   return (
     <div>
       <h3>List: </h3>
-      <Ghichu note={renderTodolist} onTodoClick={handlTodoClick} />
+      <Ghichu
+        note={renderTodolist}
+        onTodoClick={handlTodoClick}
+        onXoa={handlxoa}
+      />
       <button onClick={showAll}>show all </button>
       <button onClick={showNew}>show new </button>
       <button onClick={showOld}>show old </button>

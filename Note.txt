@@ -72,3 +72,6 @@
             modul Api
 
 - 2/12/2022 : bai 12
+
+
+$env:NODE_OPTIONS = "--openssl-legacy-provider"

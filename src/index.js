@@ -8,24 +8,30 @@ import TodoFeature from "./features/Todo";
 import AlbumFeature from "./features/Album";
 import NotFound from "./components/NotFound";
 import ListPage from "./features/Todo/pages/ListPage";
-
+import { Provider } from "react-redux";
+import store from "./app/store";
+import CounterFeature from "./features/Counter";
+import Home from "components/Home";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App></App>}>
-          <Route path="new-todo" element={<TodoFeature />}>
-            <Route path="listpage" element={<ListPage />}>
-              {" "}
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App></App>}>
+            <Route path="/home" element={<Home />}></Route>
+            <Route path="new-todo" element={<TodoFeature />}>
+              <Route path="listpage" element={<ListPage />}>
+                {" "}
+              </Route>
             </Route>
+            <Route path="new-album" element={<AlbumFeature />} />
+            <Route path="counter" element={<CounterFeature />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
           </Route>
-          <Route path="new-album" element={<AlbumFeature />} />
-
-          <Route path="*" element={<NotFound />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

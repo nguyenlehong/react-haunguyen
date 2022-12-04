@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import TodoList from "../../components/TodoList";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
+import TodoForm from "../../components/TodoForm";
 const ListPage = (props) => {
   const initTodoList = [
     {
@@ -75,13 +76,14 @@ const ListPage = (props) => {
       (a) => filterlist === "all" || filterlist === a.status
     );
   }, [todoList, filterlist]);
-  // const handleTodoFormSubmit = (values) => {
-  //   console.log(">>>form submit: ", values);
-  // };
+  const handleTodoFormSubmit = (values) => {
+    console.log(">>>form submit: ", values);
+  };
+
   return (
     <div>
       <h2> What to do</h2>
-      {/* <TodoForm onSubmit={handleTodoFormSubmit}></TodoForm> */}
+      <TodoForm onSubmit={handleTodoFormSubmit}> </TodoForm>
       <h3>Todo list w</h3>
       <TodoList todoList={loc} onTodoClick={handleTodoClick} />
       <button onClick={showall}> show all</button>

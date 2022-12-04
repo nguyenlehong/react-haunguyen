@@ -7,6 +7,7 @@ import "./App.css";
 import DetailPage from "./features/Todo/pages/DetaillPage";
 import ListPage from "./features/Todo/pages/ListPage";
 import productApi from "./api/productApi";
+import Header from "components/Header";
 function App() {
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,10 +22,8 @@ function App() {
   return (
     <>
       <div className="App">
-        <h2>Home </h2>
-        <h3>
-          <Link to="new-todo"> Todo</Link> | <Link to="new-album">Album</Link>
-        </h3>
+        <Header></Header>
+        {/* <h2>Home </h2> */}
         <Outlet></Outlet>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import TodoList from "../../components/TodoList";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Form, useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import TodoForm from "../../components/TodoForm";
 const ListPage = (props) => {
@@ -83,7 +83,7 @@ const ListPage = (props) => {
   return (
     <div>
       <h2> What to do</h2>
-      <TodoForm onSubmit={handleTodoFormSubmit}> </TodoForm>
+      <TodoForm onSubmit={handleTodoClick}> </TodoForm>
       <h3>Todo list w</h3>
       <TodoList todoList={loc} onTodoClick={handleTodoClick} />
       <button onClick={showall}> show all</button>

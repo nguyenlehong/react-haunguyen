@@ -12,25 +12,28 @@ import { Provider } from "react-redux";
 import store from "./app/store";
 import CounterFeature from "./features/Counter";
 import Home from "components/Home";
+import { SnackbarProvider } from "notistack";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App></App>}>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="new-todo" element={<TodoFeature />}>
-              <Route path="listpage" element={<ListPage />}>
-                {" "}
+      <SnackbarProvider anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App></App>}>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="new-todo" element={<TodoFeature />}>
+                <Route path="listpage" element={<ListPage />}>
+                  {" "}
+                </Route>
               </Route>
+              <Route path="new-album" element={<AlbumFeature />} />
+              <Route path="counter" element={<CounterFeature />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
             </Route>
-            <Route path="new-album" element={<AlbumFeature />} />
-            <Route path="counter" element={<CounterFeature />}></Route>
-            <Route path="*" element={<NotFound />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </SnackbarProvider>
     </Provider>
   </React.StrictMode>
 );

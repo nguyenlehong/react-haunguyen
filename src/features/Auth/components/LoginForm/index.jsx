@@ -20,37 +20,22 @@ import { register } from "features/Auth/userSlice";
 import { useDispatch } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 
-function RegisterForm(props) {
+function LoginForm(props) {
   const schema = yup
     .object()
     .shape({
-      fullName: yup.string().required("please enter your full name."),
+      identifier: yup.string().required("please enter your full name."),
+      password: yup.string().required("please enter your full password."),
     })
     .required();
   const form = useForm({
     defaultValues: {
-      fullName: "",
-      email: "",
+      identifier: "",
       password: "",
-      retypePassword: "",
-      title: "",
     },
     resolver: yupResolver(schema),
   });
-  // const dispatch = useDispatch();
-  // const handleSubmit = async (values) => {
-  //   try {
-  //     values.username = values.email;
-  //     const action = register(values);
-  //     const resultAction = await dispatch(action);
-  //     const user = unwrapResult(resultAction);
-  //     console.log("new user", user);
-  //     console.log(user);
-  //   } catch (error) {
-  //     console.log("loi that roi huhuhh", error);
-  //   }
-  //   console.log(">>> todo form :", values);
-  // };
+
   const handleSubmit = async (values) => {
     console.log(">>> form register: ", values);
     const { onSubmit } = props;
@@ -67,17 +52,12 @@ function RegisterForm(props) {
         <LockOutlined></LockOutlined>
       </Avatar>
       <Typography className="title">
-        <p>Create an account</p>
+        <p>Sign in</p>
       </Typography>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <InputField name="fullName" label="full name" form={form} />
-        <InputField name="email" label="Email" type="email" form={form} />
+        <InputField name="identifier" label="Email" type="email" form={form} />
         <InputPassword name="password" label="Password" form={form} />
-        <InputPassword
-          name="retypePassword"
-          label="Retype Password"
-          form={form}
-        />
+
         <Button type="submit" fullWidth variant="contained">
           Sign In
         </Button>
@@ -86,4 +66,4 @@ function RegisterForm(props) {
   );
 }
 
-export default RegisterForm;
+export default LoginForm;

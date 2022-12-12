@@ -74,4 +74,5 @@
 - 2/12/2022 : bai 12
 
 
+tao hang so du an: chuyen do qua lai login va regis ter
 $env:NODE_OPTIONS = "--openssl-legacy-provider"

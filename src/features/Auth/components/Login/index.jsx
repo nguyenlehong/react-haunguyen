@@ -1,19 +1,17 @@
-import { register } from "features/Auth/userSlice";
+import { login } from "features/Auth/userSlice";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 import RegisterForm from "../RegisterForm";
 import { useSnackbar } from "notistack";
+import LoginForm from "../LoginForm";
 
-Register.prototype = {};
-
-function Register(props) {
+function Login(props) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const handleSubmit = async (values) => {
     try {
-      values.username = values.email;
-      const action = register(values);
+      const action = login(values);
       const resultAction = await dispatch(action);
       const user = unwrapResult(resultAction);
       // close dialog in header
@@ -24,9 +22,8 @@ function Register(props) {
 
       console.log("new user", user);
       console.log(">>> form:", values);
-      enqueueSnackbar(" thanh cong", { variant: "success" });
     } catch (error) {
-      console.log("fail", error);
+      console.log("fail to login", error);
 
       enqueueSnackbar(error.message, { variant: "error" });
     }
@@ -34,9 +31,9 @@ function Register(props) {
 
   return (
     <div>
-      <RegisterForm onSubmit={handleSubmit} />
+      <LoginForm onSubmit={handleSubmit} />
     </div>
   );
 }
 
-export default Register;
+export default Login;

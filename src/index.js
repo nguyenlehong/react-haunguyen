@@ -13,6 +13,8 @@ import store from "./app/store";
 import CounterFeature from "./features/Counter";
 import Home from "components/Home";
 import { SnackbarProvider } from "notistack";
+import ProductFeature from "features/Product";
+import ProListPage from "features/Product/pages/ListPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -29,6 +31,9 @@ root.render(
               </Route>
               <Route path="new-album" element={<AlbumFeature />} />
               <Route path="counter" element={<CounterFeature />}></Route>
+              <Route path="products" element={<ProductFeature />}>
+                <Route path="listpagee" element={<ProListPage />} />
+              </Route>
               <Route path="*" element={<NotFound />}></Route>
             </Route>
           </Routes>

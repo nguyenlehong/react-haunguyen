@@ -14,29 +14,14 @@ import CounterFeature from "./features/Counter";
 import Home from "components/Home";
 import { SnackbarProvider } from "notistack";
 import ProductFeature from "features/Product";
-import ProListPage from "features/Product/pages/ListPage";
+import ProListPage from "features/Product/pages/ProListPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <SnackbarProvider anchorOrigin={{ vertical: "top", horizontal: "right" }}>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App></App>}>
-              <Route path="/home" element={<Home />}></Route>
-              <Route path="new-todo" element={<TodoFeature />}>
-                <Route path="listpage" element={<ListPage />}>
-                  {" "}
-                </Route>
-              </Route>
-              <Route path="new-album" element={<AlbumFeature />} />
-              <Route path="counter" element={<CounterFeature />}></Route>
-              <Route path="products" element={<ProductFeature />}>
-                <Route path="listpagee" element={<ProListPage />} />
-              </Route>
-              <Route path="*" element={<NotFound />}></Route>
-            </Route>
-          </Routes>
+          <App />
         </BrowserRouter>
       </SnackbarProvider>
     </Provider>
@@ -47,3 +32,23 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+{
+  /* <BrowserRouter>
+<Routes>
+  <Route path="/" element={<App></App>}>
+    <Route path="/home" element={<Home />}></Route>
+    <Route path="new-todo" element={<TodoFeature />}>
+      <Route path="listpage" element={<ListPage />}>
+        {" "}
+      </Route>
+    </Route>
+    <Route path="new-album" element={<AlbumFeature />} />
+    <Route path="counter" element={<CounterFeature />}></Route>
+    <Route path="products" element={<ProductFeature />}>
+      <Route path="listpagee" element={<ProListPage />} />
+    </Route>
+    <Route path="*" element={<NotFound />}></Route>
+  </Route>
+</Routes>
+</BrowserRouter> */
+}

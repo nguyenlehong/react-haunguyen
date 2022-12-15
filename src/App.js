@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import TodoFeature from "./features/Todo";
 import AlbumFeature from "./features/Album";
 
@@ -9,6 +9,11 @@ import ListPage from "./features/Todo/pages/ListPage";
 import productApi from "./api/productApi";
 import Header from "components/Header";
 import { useSnackbar } from "notistack";
+import { Home } from "@mui/icons-material";
+import CounterFeature from "features/Counter";
+import ProductFeature from "features/Product";
+import ProListPage from "features/Product/pages/ProListPage";
+import NotFound from "components/NotFound";
 function App() {
   const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
@@ -25,14 +30,25 @@ function App() {
     enqueueSnackbar("asdf", { variant: "success" });
   };
   return (
-    <>
-      <div className="App">
-        <Header></Header>
-        {/* <h2>Home </h2> */}
-        <Outlet></Outlet>
-        <button onClick={shownoti}>show note</button>
-      </div>
-    </>
+    <div className="App">
+      <Header></Header>
+
+      {/* <button onClick={shownoti}>show note</button> */}
+      <Routes>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="new-todo" element={<TodoFeature />}>
+          <Route path="listpage" element={<ListPage />}>
+            {" "}
+          </Route>
+        </Route>
+        <Route path="new-album" element={<AlbumFeature />} />
+        <Route path="counter" element={<CounterFeature />}></Route>
+        <Route path="products" element={<ProductFeature />}>
+          <Route path="listpage" element={<ProListPage />}></Route>
+        </Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
+    </div>
   );
 }
 

@@ -16,16 +16,6 @@ import ProListPage from "features/Product/pages/ProListPage";
 import NotFound from "components/NotFound";
 function App() {
   const { enqueueSnackbar } = useSnackbar();
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const params = {
-        _limit: 10,
-      };
-      const productList = await productApi.getAll(params);
-      console.log(productList);
-    };
-    fetchProducts();
-  }, []);
   const shownoti = () => {
     enqueueSnackbar("asdf", { variant: "success" });
   };
@@ -53,3 +43,14 @@ function App() {
 }
 
 export default App;
+
+// useEffect(() => {
+//   const fetchProducts = async () => {
+//     const params = {
+//       _limit: 10,
+//     };
+//     const productList = await productApi.getAll(params);
+//     console.log(productList);
+//   };
+//   fetchProducts();
+// }, []);
